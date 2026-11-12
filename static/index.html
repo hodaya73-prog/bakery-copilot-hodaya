@@ -8,7 +8,18 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js" defer></script>
 </head>
 <body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+    <symbol id="croissant" viewBox="0 0 64 40"><ellipse cx="9" cy="30" rx="5.5" ry="7.5" transform="rotate(-55 9 30)" fill="#C47F31"/><ellipse cx="55" cy="30" rx="5.5" ry="7.5" transform="rotate(55 55 30)" fill="#C47F31"/><ellipse cx="19" cy="21" rx="8" ry="11" transform="rotate(-30 19 21)" fill="#D4903C"/><ellipse cx="45" cy="21" rx="8" ry="11" transform="rotate(30 45 21)" fill="#D4903C"/><ellipse cx="32" cy="16" rx="11" ry="12" fill="#E3A857"/><path d="M27 6Q25 16 28 26M37 6Q39 16 36 26M13 14Q11 24 16 31M51 14Q53 24 48 31" stroke="#A8661F" stroke-width="1.5" fill="none" stroke-linecap="round"/></symbol>
+    <symbol id="loaf" viewBox="0 0 64 40"><path d="M6 28C6 12 18 6 32 6C46 6 58 12 58 28C58 33 55 35 51 35L13 35C9 35 6 33 6 28Z" fill="#D9984A"/><path d="M20 12L26 22M31 10L37 21M42 12L47 22" stroke="#F6D9A4" stroke-width="3" stroke-linecap="round"/></symbol>
+    <symbol id="donut" viewBox="0 0 48 48"><path fill-rule="evenodd" d="M24 2a22 22 0 1 0 0 44a22 22 0 1 0 0-44zM24 17a7 7 0 1 1 0 14a7 7 0 1 1 0-14z" fill="#E3A857"/><path fill-rule="evenodd" d="M24 5a19 19 0 1 0 0 38a19 19 0 1 0 0-38zM24 16a8 8 0 1 1 0 16a8 8 0 1 1 0-16z" fill="#F2A1B5"/><g stroke-width="2.4" stroke-linecap="round"><path d="M12 14l3 -2" stroke="#fff"/><path d="M33 9l3 2" stroke="#8FAE6A"/><path d="M38 22l3 1" stroke="#fff"/><path d="M10 28l-3 1" stroke="#8FAE6A"/><path d="M30 38l2 3" stroke="#fff"/><path d="M17 38l-2 3" stroke="#8FAE6A"/></g></symbol>
+    <symbol id="wheat" viewBox="0 0 24 64"><path d="M12 62V10" stroke="#B88A3E" stroke-width="2" stroke-linecap="round"/><g fill="#D9A94F"><ellipse cx="12" cy="6" rx="3" ry="5"/><ellipse cx="7" cy="18" rx="3" ry="5.5" transform="rotate(-30 7 18)"/><ellipse cx="17" cy="18" rx="3" ry="5.5" transform="rotate(30 17 18)"/><ellipse cx="7" cy="30" rx="3" ry="5.5" transform="rotate(-30 7 30)"/><ellipse cx="17" cy="30" rx="3" ry="5.5" transform="rotate(30 17 30)"/><ellipse cx="7" cy="42" rx="3" ry="5.5" transform="rotate(-30 7 42)"/><ellipse cx="17" cy="42" rx="3" ry="5.5" transform="rotate(30 17 42)"/></g></symbol>
+  </defs></svg>
+
   <div id="login" class="modal hidden" role="dialog" aria-labelledby="login-title">
+    <svg class="deco d1" viewBox="0 0 64 40" aria-hidden="true"><use href="#croissant"/></svg>
+    <svg class="deco d2" viewBox="0 0 24 64" aria-hidden="true"><use href="#wheat"/></svg>
+    <svg class="deco d3" viewBox="0 0 48 48" aria-hidden="true"><use href="#donut"/></svg>
+    <svg class="deco d4" viewBox="0 0 64 40" aria-hidden="true"><use href="#loaf"/></svg>
     <form id="login-form" class="card">
       <p class="kicker">BAKERY COPILOT</p>
       <h1 id="login-title">Sign in</h1>
@@ -22,11 +33,16 @@
   <div id="app" class="app hidden">
     <aside class="sidebar">
       <div class="brand">
-        <span class="dot"></span>
+        <span class="dot"><svg viewBox="0 0 64 40" aria-hidden="true"><use href="#croissant"/></svg></span>
         <div><strong>Bakery Copilot</strong><small id="who"></small></div>
       </div>
       <button id="new-chat" class="primary wide">+ New chat</button>
       <nav id="conversations" class="conversations" aria-label="Conversations"></nav>
+      <div class="shelf" aria-hidden="true">
+        <svg width="62" height="39" viewBox="0 0 64 40"><use href="#croissant"/></svg>
+        <svg width="56" height="35" viewBox="0 0 64 40"><use href="#loaf"/></svg>
+        <svg width="38" height="38" viewBox="0 0 48 48"><use href="#donut"/></svg>
+      </div>
       <div class="sidebar-foot">
         <button id="toggle-invoices" class="ghost">Invoices</button>
         <button id="logout" class="ghost">Sign out</button>
@@ -39,6 +55,7 @@
         <span id="status" class="status"></span>
       </header>
 
+      <svg class="wm" viewBox="0 0 64 40" aria-hidden="true"><use href="#croissant"/></svg>
       <section id="messages" class="messages" aria-live="polite"></section>
 
       <form id="composer" class="composer">
