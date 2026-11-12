@@ -7,7 +7,7 @@
 import { defineRailway, github, postgres, project, service, volume } from "railway/iac";
 
 export default defineRailway(() => {
-  const bakeryCopilot = github("MaceTenth/bakery-copilot");
+  const bakeryCopilot = github("hodaya73-prog/bakery-copilot-hodaya");
 
   const Postgres = postgres("Postgres", { region: "iad" });
   Postgres.networking = { privateNetworkEndpoint: "postgres" };
@@ -42,7 +42,7 @@ export default defineRailway(() => {
     replicas: { "iad": 1 },
   });
 
-  return project("bakery-copilot", {
+  return project("bakery-copilot-hodaya", {
     variables: { managed: false },
     resources: [web, digest, Postgres, postgresVolume],
   });
